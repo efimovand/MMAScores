@@ -4,6 +4,7 @@ import '../App.css';
 import "@fontsource/geologica";
 import { calculateResults } from '../utils/scores';
 import { MdExpandMore } from "react-icons/md";
+import fightersPics from '../utils/fightersPics';
 
 
 const MatchPage = ({ backendData }) => {
@@ -74,12 +75,12 @@ const Preview = ({ data }) => {
 
                 {/* <-- Side */}
                 <div className='preview-side' style={{ alignItems: 'flex-start', borderRadius: '30px 0 0 30px', background: '#0033FF' }}>
-                    <img className='preview-img' alt='Fighter 1' src={data.pics[0]} style={{ borderRadius: '0 0 0 30px' }} />
+                    <img className='preview-img' alt='Fighter 1' src={ fightersPics[data.pics[0]] } style={{ borderRadius: '0 0 0 30px' }} />
                 </div>
 
                 {/* --> Side */}
                 <div className='preview-side' style={{ alignItems: 'flex-end', borderRadius: '0 30px 30px 0', background: '#C55353' }}>
-                    <img className='preview-img' alt='Fighter 2' src={data.pics[1]} style={{ borderRadius: '0 0 30px 0' }} />
+                    <img className='preview-img' alt='Fighter 2' src={ fightersPics[data.pics[1]] } style={{ borderRadius: '0 0 30px 0' }} />
                 </div>
 
             </div>
@@ -255,10 +256,10 @@ const MediaCard = ({ names, cite, scores, dark, isLast = false }) => {
         <div ref={cardRef} className='media-card' style={{ display: 'flex', flexDirection: 'column' }}>
 
             {/* Main Row */}
-            <div className='media-row' style={{ position: 'relative', background: dark ? '#000000' : '#0B0E0F', borderRadius: isLast && !isExpanded ? '0 0 20px 20px' : '0', transition: 'border-radius 0.8s ease' }}>
+            <div className='media-row' onClick={() => (scores.length > 1 ? toggleExpand() : null)} style={{ position: 'relative', background: dark ? '#000000' : '#0B0E0F', cursor: scores.length > 1 ? 'pointer' : 'default', borderRadius: isLast && !isExpanded ? '0 0 20px 20px' : '0', transition: 'border-radius 0.8s ease' }}>
 
                 {/* More Button */}
-                <button className='media-more-btn' style={{ display: scores.length > 1 ? 'inline-block' : 'none' }} onClick={toggleExpand}>
+                <button className='media-more-btn' style={{ display: scores.length > 1 ? 'inline-block' : 'none' }}>
                     <MdExpandMore style={{ height: '25px', width: '25px', color: '#4A4A4A', margin: 0, transform: isExpanded ? 'rotate(0deg)' : 'rotate(-90deg)', marginTop: '-4.5px', marginLeft: '-8px', transition: 'transform 0.3s ease', }} />
                 </button>
 

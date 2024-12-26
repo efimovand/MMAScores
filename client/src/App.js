@@ -631,19 +631,20 @@ function AnimatedRoutes({ backendData }) {
 
 function App() {
 
-  // ---------- Backend Data ----------
-  // const [backendData, setBackendData] = useState([]);
-
-  // useEffect(() => {
-  //   fetch('http://127.0.0.1:8000/api/events')
-  //     .then(response => response.json())
-  //     .then(data => {
-  //       setBackendData(data.message);
-  //     })
-  //     .catch(error => {
-  //       console.error('Error:', error);
-  //     });
-  // }, []);
+  // [TEST]
+  const [backendData, setBackendData] = useState([]);
+  
+  useEffect(() => {
+    fetch('http://127.0.0.1:8000/events')
+      .then(response => response.json())
+      .then(data => {
+        console.log(data.events);
+        setBackendData(data.events)
+      })
+      .catch(error => {
+        console.error('Error:', error);
+      });
+  }, []);
 
   return (
     <div className="App">

@@ -4,11 +4,12 @@ import '../App.css';
 import "@fontsource/geologica";
 import Calendar from './Calendar';
 import { calculateResults } from '../utils/scores';
+import fightersPics from '../utils/fightersPics';
 
 // For Live Component
 import { MdExpandMore } from "react-icons/md";
-import rakh_img from '../pic_fighters/rakh.png';
-import garry_img from '../pic_fighters/garry.png';
+import rakh_img_live from '../pic_fighters/rakh.png';
+import garry_img_live from '../pic_fighters/garry.png';
 
 
 const Home = ({ backendData }) => {
@@ -117,7 +118,7 @@ const Home = ({ backendData }) => {
 
               {/* Fighter 1 */}
               <div className='live-match-fighter'>
-                <img className='live-fighter-img' alt='Live Fighter Pic 1' src={rakh_img} style={{ height: '50px', width: '50px' }} />
+                <img className='live-fighter-img' alt='Live Fighter Pic 1' src={rakh_img_live} style={{ height: '50px', width: '50px' }} />
                 <p className='live-fighter-name' style={{ fontSize: '10px', margin: 0 }}> Rakhmonov </p>
               </div>
 
@@ -129,7 +130,7 @@ const Home = ({ backendData }) => {
 
               {/* Fighter 2 */}
               <div className='live-match-fighter'>
-                <img className='live-fighter-img' alt='Live Fighter Pic 2' src={garry_img} style={{ height: '50px', width: '50px' }} />
+                <img className='live-fighter-img' alt='Live Fighter Pic 2' src={garry_img_live} style={{ height: '50px', width: '50px' }} />
                 <p className='live-fighter-name' style={{ fontSize: '10px', margin: 0 }}> Garry </p>
               </div>
 
@@ -205,7 +206,7 @@ const Match = ({ names, pics, result, judges, dark }) => {
       <div className='match-info' style={{ display: 'flex', justifyContent: 'space-between', width: '283px', height: '100%', padding: '0 5px', background: dark ? '#0B0E0F' : '#171C1F' }}>
 
         {/* Pic 1 */}
-        <img alt='Fighter Pic 1' src={pics[0]} style={{ height: '55px', width: '55px', alignSelf: 'flex-end' }} />
+        <img alt='Fighter Pic 1' src={ fightersPics[pics[0]] } style={{ height: '55px', width: '55px', alignSelf: 'flex-end' }} />
 
         {/* Text */}
         <div className='match-text' style={{ marginTop: '16px', textAlign: 'center' }}>
@@ -214,7 +215,7 @@ const Match = ({ names, pics, result, judges, dark }) => {
         </div>
 
         {/* Pic 2 */}
-        <img alt='Fighter Pic 2' src={pics[1]} style={{ height: '55px', width: '55px', alignSelf: 'flex-end' }} />
+        <img alt='Fighter Pic 2' src={ fightersPics[pics[1]] } style={{ height: '55px', width: '55px', alignSelf: 'flex-end' }} />
 
       </div>
 
