@@ -1,0 +1,37 @@
+Event = {
+	title: “UFC 310”,
+    matches: [
+        
+        {
+            names: [“Gane”, “Volkov”],
+            pics: [gane.png, volkov.png], // картинки с ufc.com либо sofascore
+            judges: [
+                { name: “Byrd”, score: [“10 - 9”, “10 - 9”, “9 - 10”] },
+                { name: “Colon”, score: [“10 - 9”, “9 - 10”, “9 - 10”] },
+                { name: “Kamijo”, score: [“10 - 9”, “10 - 9”, “9 - 10”] },
+            ],
+            media: [
+                { name: “Tristen Critchfield”, score: [“10 - 9”, “9 - 10”, “9 - 10”] },
+                { name: “Danny Segura”, score: [“10 - 9”, “10 - 9”, “9 - 10”] },
+                …
+                // тут дополнительно связывать name – media
+            ],
+            stats: {  // инфа скорее всего с ufc.com
+                age: [34, 36],
+                height: [123, 123],
+                weight: [245.5, 254.5],
+                reach: [321, 321],
+                state: [France, Russia],
+            }
+        },
+
+        {
+            match 2 …
+        },
+
+        {
+            match 3 …
+        },
+
+    ]
+}
