@@ -4,12 +4,18 @@ from typing import List
 
 # ---------- Classes of data ----------
 
+# Judges / Media
+class ScoreCard(BaseModel):
+    name: str
+    score: List[str]
+
+
 # Match
 class Match(BaseModel):
     names: List[str]
     pics: List[str]
-    judges: List[dict]
-    media: List[dict]
+    judges: List[ScoreCard]
+    media: List[ScoreCard]
     stats: List[dict]
 
 
